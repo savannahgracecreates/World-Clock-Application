@@ -28,3 +28,11 @@ mexicoCityTimeElement.innerHTML = mexicoCityTime.format("h:mm:ss [<small>]A[</sm
 }
 updateTime();
 setInterval(updateTime, 1000);
+
+function updateCity(event) {
+    let cityTimeZone = event.target.value;
+    let cityTime = moment().tz(cityTimeZone);
+}
+
+let citiesSelectElement = document.querySelector("#city");
+citiesSelectElement.addEventListener("change", updateCity);
